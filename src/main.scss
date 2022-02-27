@@ -32,20 +32,6 @@ $unit: 8px;
     }
 }
 
-.btn{
-    &.btn-cta{
-        @include btn($primary-color, $secondary-color, 'true');
-        &:hover{
-            @include btn($secondary-color, $terciary-color, 'true');
-            box-shadow: $box-shadow;
-        }
-    }
-    &:hover{
-        @include btn($terciary-color, $secondary-color, 'true');
-        box-shadow: $box-shadow;
-    }
-}
-
 *{
     @include reset-pm();
     box-sizing: border-box;
@@ -90,7 +76,7 @@ ul{
     li{
         a{
             @include btn($background-color: $terciary-color, 
-                         $color: $secondary-color, 
+                         $color: $secundary-color, 
                          $bold: 'true');
             &:hover{
                 @include btn($secundary-color, $terciary-color, 'false');
@@ -114,12 +100,27 @@ header{
     .col{
         width: 50%;
     }
-
     .col-30{
         width: 30%;
     }
-    
     .col-70{
         width: 70%;
     }
 }
+
+.m-auto{
+    margin: 0 auto;
+}
+
+@for $i from 1 to $limit{
+    .m-#{$i}{
+        margin: $i * $unit;
+            }
+    .p-#{$i}{
+    margin: $i * $unit;
+        }
+    
+    .py-#{$i}{
+    margin: $i * $unit 0
+                }
+    }
